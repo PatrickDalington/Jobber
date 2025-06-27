@@ -13,7 +13,7 @@ import com.cwp.security.JwtFilter;
 
 @Configuration
 public class SecurityConfig {
-	
+
 	@Autowired
 	private JwtFilter jwtFilter;
 
@@ -27,7 +27,7 @@ public class SecurityConfig {
     				   .requestMatchers(HttpMethod.GET, "/api/jobs/**").permitAll()
     				   .requestMatchers(HttpMethod.POST, "/api/jobs").hasAuthority("EMPLOYER")
     				   .anyRequest().authenticated()
-    				   
+
     		).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
     		   .build();
     }

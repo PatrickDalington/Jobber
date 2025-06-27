@@ -21,27 +21,27 @@ public class Job {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 
 	@NotBlank(message = "Job title is required")
 	private String jobTitle;
-	
+
 	@NotBlank(message = "Description is required")
 	@Column(length = 1000)
 	private String description;
-	
+
 	@NotBlank(message = "Location is required")
 	private String location;
-	
+
 	private LocalDate datePosted;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	@JsonIgnoreProperties("jobs") 
+	@JsonIgnoreProperties("jobs")
 	private User postedBy;
-	
-	
-	
+
+
+
 	public Long getId() {
 		return id;
 	}
@@ -89,6 +89,6 @@ public class Job {
 	public void setPostedBy(User postedBy) {
 		this.postedBy = postedBy;
 	}
-	
-	
+
+
 }

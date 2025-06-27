@@ -3,7 +3,7 @@ package com.cwp.dto;
 import java.time.LocalDate;
 
 public class JobResponseDTO {
-	
+
 	private Long id;
 	private String jobTitle;
 	private String description;
@@ -11,13 +11,13 @@ public class JobResponseDTO {
 	private LocalDate datePosted;
 	private String employerName;
 	private String employerEmail;
-	
-	
+
+
 	// Creating a constructor
 	public JobResponseDTO (
 			Long id, String jobTitle, String description, String location, LocalDate datePosted,
 			String employerName, String employerEmail
-			
+
 	){
 		this.id = id;
 		this.jobTitle = jobTitle;
@@ -29,7 +29,7 @@ public class JobResponseDTO {
 	}
 
 
-	
+
 
 
 	public Long getId() {
@@ -90,15 +90,15 @@ public class JobResponseDTO {
 	public void setEmployerName(String employerName) {
 		this.employerName = employerName;
 	}
-	
+
 	public String getEmployerEmail() {
 		return employerEmail;
 	}
-	
+
 	public void setEmployerEmail(String employerEmail) {
 		this.employerEmail = employerEmail;
 	}
-	
-	
+
+
 
 }

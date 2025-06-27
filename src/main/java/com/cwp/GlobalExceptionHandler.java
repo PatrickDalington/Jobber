@@ -13,21 +13,21 @@ import com.cwp.Exceptions.EmailAlreadyExistsException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-	
+
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<?> handleValidationError(MethodArgumentNotValidException ex){
-		
-		Map<String, String> errors = new HashMap<>(); 
-		
+
+		Map<String, String> errors = new HashMap<>();
+
 		ex.getBindingResult().getFieldErrors().forEach(error ->
-			
+
 			errors.put(error.getField(), error.getDefaultMessage())
-				
+
 		);
-		
+
 		return ResponseEntity.badRequest().body(errors);
 	}
-	
+
 	@ExceptionHandler({ EmailAlreadyExistsException.class })
 	public ResponseEntity<?> handleEmailConflict(EmailAlreadyExistsException ex) {
 	    return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());

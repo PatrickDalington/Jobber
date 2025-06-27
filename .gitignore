@@ -21,6 +21,54 @@ target/
 
 ### NetBeans ###
 /nbproject/private/
+
+
+# Maven build files
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# IDE settings (Eclipse/IntelliJ)
+*.iml
+.idea/
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Docker
+*.pid
+*.seed
+*.db
+*.sql
+docker-compose.override.yml
+
+# IntelliJ
+out/
+
+# Eclipse
+bin/
+
+# Java
+*.class
+
+# VSCode
+.vscode/
+
+# Optional: exclude database backups, dump files
+*.dump
+*.bak
+*.backup
 /nbbuild/
 /dist/
 /nbdist/

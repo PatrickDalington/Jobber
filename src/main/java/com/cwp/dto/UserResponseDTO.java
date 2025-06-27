@@ -6,8 +6,8 @@ public class UserResponseDTO {
 	private String name;
 	private String email;
 	private String role;
-	
-	
+
+
 	// Creating a constructor
 	public UserResponseDTO(Long id, String name, String email, String role) {
 		this.id = id;
@@ -55,6 +55,6 @@ public class UserResponseDTO {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
+
+
 }

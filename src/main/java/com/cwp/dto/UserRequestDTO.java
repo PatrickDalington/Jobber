@@ -4,17 +4,17 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class UserRequestDTO {
-	
+
 	@NotBlank
 	private String name;
-	
+
 	@NotBlank
 	private String email;
-	
+
 	@NotBlank
 	@Size(min = 6)
 	private String password;
-	
+
 	@NotBlank
 	private String role;
 
@@ -49,8 +49,8 @@ public class UserRequestDTO {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	
+
+
+
 
 }

@@ -24,19 +24,19 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/jobs")
 public class JobController {
-	
-	
-	
-	 
-	 
+
+
+
+
+
 	 /* Create */
-	
+
 	@Autowired
 	JobService jobService;
-	
+
 	@PostMapping
 	public ResponseEntity<?> postNewJob(@Valid @RequestBody JobRequestDTO jobDTO){
-		
+
 		try {
 			return ResponseEntity
 					.status(HttpStatus.CREATED)
@@ -45,15 +45,15 @@ public class JobController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
 		}
 	}
-	
-	
+
+
 	 /* Read */
-	
+
 	@GetMapping
 	public List<JobResponseDTO> getAllJobs(){
 		return jobService.getAllJobs();
 	}
-	
+
 	@GetMapping("/location/{city}")
 	public List<JobResponseDTO> getJobsByLocation(@PathVariable String city){
 		return jobService.getJobsByLocation(city);

@@ -1,11 +1,14 @@
-package com.cwp.services;
+package com.cwp.service;
 
 
 
-import com.cwp.dto.UserRequestDTO;
-import com.cwp.dto.UserResponseDTO;
-import com.cwp.model.User;
-import com.cwp.repository.UserRepository;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.Function;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.Example;
@@ -15,13 +18,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.http.ResponseEntity;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.function.Function;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.cwp.dto.UserRequestDTO;
+import com.cwp.dto.UserResponseDTO;
+import com.cwp.model.User;
+import com.cwp.repository.UserRepository;
+import com.cwp.services.UserService;
 
 public class UserServiceTest {
 
@@ -46,7 +47,7 @@ public class UserServiceTest {
 			@Override
 			public void flush() {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
@@ -64,19 +65,19 @@ public class UserServiceTest {
 			@Override
 			public void deleteAllInBatch(Iterable<User> entities) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void deleteAllByIdInBatch(Iterable<Long> ids) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void deleteAllInBatch() {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
@@ -148,31 +149,31 @@ public class UserServiceTest {
 			@Override
 			public void deleteById(Long id) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void delete(User entity) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void deleteAllById(Iterable<? extends Long> ids) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void deleteAll(Iterable<? extends User> entities) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void deleteAll() {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override

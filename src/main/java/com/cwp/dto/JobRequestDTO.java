@@ -3,28 +3,28 @@ package com.cwp.dto;
 import jakarta.validation.constraints.NotBlank;
 
 public class JobRequestDTO {
-	
+
 	@NotBlank
 	private String jobTitle;
-	
+
 	@NotBlank
 	private String description;
-	
+
 	@NotBlank
 	private String location;
-	
+
 	private Long userId; // This Id will hold the Id of the employer posting this job
-	
-	
-	public void setJobTitle(String jobTitle) { 
-		
-		this.jobTitle = jobTitle; 
-		
+
+
+	public void setJobTitle(String jobTitle) {
+
+		this.jobTitle = jobTitle;
+
 	}
-	
+
 	public String getJobTitle() {
 		return jobTitle;
-	};
+	}
 
 	public String getDescription() {
 		return description;
@@ -56,8 +56,8 @@ public class JobRequestDTO {
 	}
 
 
-	
-	
-	
+
+
+
 
 }

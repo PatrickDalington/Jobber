@@ -17,12 +17,13 @@ import jakarta.transaction.Transactional;
 @Service
 @Transactional
 public class UserService {
-	
-	
-	@Autowired UserRepository userRepository;
-	
+
+
+	@Autowired
+	public UserRepository userRepository;
+
 	public ResponseEntity<UserResponseDTO> registerUser (UserRequestDTO userDTO) {
-		
+
 		    if (userRepository.findByEmail(userDTO.getEmail()) != null) {
 		        throw new EmailAlreadyExistsException("User with email already exists");
 		    }

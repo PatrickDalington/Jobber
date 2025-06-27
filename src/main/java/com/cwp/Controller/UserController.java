@@ -17,10 +17,10 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@PostMapping
 	public ResponseEntity<?> registerUser(@Valid @RequestBody UserRequestDTO userDTO) {
 	    try {
@@ -37,7 +37,7 @@ public class UserController {
 	                .body("An error occurred: " + ex.getMessage());
 	    }
 	}
-	
-	
-	
+
+
+
 }
