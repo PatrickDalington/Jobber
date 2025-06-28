@@ -1,18 +1,12 @@
-# Use a base image with JDK
-FROM openjdk:17-jdk-slim
-
-# Add metadata (optional)
-LABEL maintainer="Olumba Chidubem Patrick"
-LABEL app="Jobber"
-
-# Set working directory inside container
+# 1. Build stage
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the built JAR file into the container
-COPY target/jobber-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose port (match your Spring Boot server.port)
+# 2. Run stage
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/jobber-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-
-# Run the JAR when container starts
 ENTRYPOINT ["java", "-jar", "app.jar"]
