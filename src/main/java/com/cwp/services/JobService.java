@@ -45,7 +45,7 @@ public class JobService {
 
 	// SEARCH FOR A JOB BY LOCATION
 
-	@GetMapping("/location/{city}")
+	@GetMapping
 	public List<JobResponseDTO> getJobsByLocation(@PathVariable String city){
 		return jobRepository.findByLocation(city).stream().map(job -> new JobResponseDTO(
 
