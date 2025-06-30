@@ -114,8 +114,8 @@ public class JobService {
 		        		savedJob.getPostedBy().getEmail()
 		        );
 
-		        // Send email notification to this poster
-		        mailService.sendJobPostedNotification(employer.getEmail(), savedJob.getJobTitle());
+		        // Send email notification to this poster (Disabled because of hosting site Render)
+		        //mailService.sendJobPostedNotification(employer.getEmail(), savedJob.getJobTitle());
 
 		        return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
